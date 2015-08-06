@@ -13,4 +13,4 @@ Before using this test tool please set data connection to 3g or 4g and turn off 
 In application you can set "seconds to PASS", if DUT didn't connect to the Internet until this time it will be marked as FAIL.
 You can set "Times of test" also, it means how many test you would like to do.
 After test You can save results to clipboard and after that copy it to your favourite note application. Enjoy! :) <br>
-In few words app is simply waiting for 200 code status from http://google.com after turning off/on dataconnection.
+In few words app is simply waiting for 200 code status from http://google.com/ after turning off/on dataconnection.
