@@ -9,7 +9,6 @@ import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -32,23 +31,8 @@ public class CallTest extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_call_test2);
+        setContentView(R.layout.activity_call_test);
         asyncStartTestTask = new AsyncStartTestTask();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -62,7 +46,6 @@ public class CallTest extends ActionBarActivity {
         EditText secondsEditText = (EditText)findViewById(R.id.secondsEditText);
         EditText timesEditText = (EditText)findViewById(R.id.timesEditText);
         Integer seconds = Integer.parseInt(secondsEditText.getText().toString());
-        seconds--;
         Integer times = Integer.parseInt(timesEditText.getText().toString());
         TextView resultsTextView = (TextView)findViewById(R.id.resutlsTextView);
         Button startButton = (Button)findViewById(R.id.startTestButton);
@@ -138,7 +121,7 @@ public class CallTest extends ActionBarActivity {
         protected void onProgressUpdate(Float... values) {
             StringBuilder stringBuilder = new StringBuilder(((int)(float)values[0] + 1) + ":\t");
             if(values[1] == 200){
-                stringBuilder.append("PASS in " + (float)values[2] + "seconds");
+                stringBuilder.append("PASS in " + (float)values[2] + " seconds");
             }else{
                 stringBuilder.append("FAIL");
             }
