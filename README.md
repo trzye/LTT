@@ -8,7 +8,7 @@ Lenovo Test Tools
 Application for doing some field tests, for now there is only Call test support.
 
 <h3>Call test</h3>
-<img src="https://github.com/trzye/LTT/blob/master/calltest.jpeg" height="400" width="300"><br>
+<img src="https://github.com/trzye/LTT/blob/master/calltest.jpeg" height="640" width="360"><br>
 Before using this test tool please set data connection to 3g or 4g and turn off WiFi connection.
 In application you can set "seconds to PASS", if DUT didn't connect to the Internet until this time it will be marked as FAIL.
 You can set "Times of test" also, it means how many test you would like to do.
