@@ -79,7 +79,6 @@ public class CallTest extends ActionBarActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             startButton.setText("Tests ended, press to restart :)");
-            startButton.setTextColor(ColorStateList.valueOf(Color.BLACK));
             super.onPostExecute(aVoid);
         }
 
