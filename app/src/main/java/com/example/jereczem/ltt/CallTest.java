@@ -43,16 +43,16 @@ public class CallTest extends ActionBarActivity {
 
     public void startTests(View view) {
         if(!asyncStartTestTask.getStatus().equals(AsyncTask.Status.RUNNING)){
-        EditText secondsEditText = (EditText)findViewById(R.id.secondsEditText);
-        EditText timesEditText = (EditText)findViewById(R.id.timesEditText);
-        Integer seconds = Integer.parseInt(secondsEditText.getText().toString());
-        Integer times = Integer.parseInt(timesEditText.getText().toString());
-        TextView resultsTextView = (TextView)findViewById(R.id.resutlsTextView);
-        Button startButton = (Button)findViewById(R.id.startTestButton);
-        asyncStartTestTask = new AsyncStartTestTask();
-        startButton.setText("Test in progress... press to cancel");
-        resultsTextView.setText("");
-        asyncStartTestTask.execute(seconds, times, this, resultsTextView, startButton);
+            EditText secondsEditText = (EditText)findViewById(R.id.secondsEditText);
+            EditText timesEditText = (EditText)findViewById(R.id.timesEditText);
+            Integer seconds = Integer.parseInt(secondsEditText.getText().toString());
+            Integer times = Integer.parseInt(timesEditText.getText().toString());
+            TextView resultsTextView = (TextView)findViewById(R.id.resutlsTextView);
+            Button startButton = (Button)findViewById(R.id.startTestButton);
+            asyncStartTestTask = new AsyncStartTestTask();
+            startButton.setText("Test in progress... press to cancel");
+            resultsTextView.setText("");
+            asyncStartTestTask.execute(seconds, times, this, resultsTextView, startButton);
         }else{
             Button startButton = (Button)findViewById(R.id.startTestButton);
             asyncStartTestTask.cancel(true);
