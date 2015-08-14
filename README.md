@@ -3,6 +3,9 @@ Lenovo Test Tools
 
 <h3>Link to .apk file</h3>
 <a href="https://mega.co.nz/#!299XnLIb!TS_F7FoOz_BUK4pCV_O5wedQNZ7jVs0Sebvofqayqjw">download</a>
+<a href="http://www.speedyshare.com/CmAAg/ltt.apk">new version with lollipop support</a>
+! On lollipop You need to turn on/off data manually for each test item
+
 
 <h2>Description</h2>
 Application for doing some field tests, for now there is only Call test support.
