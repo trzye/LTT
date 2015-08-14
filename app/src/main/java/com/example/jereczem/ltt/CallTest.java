@@ -6,9 +6,13 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.Build;
+import android.provider.Settings;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -82,6 +86,22 @@ public class CallTest extends ActionBarActivity {
             super.onPostExecute(aVoid);
         }
 
+        private boolean isAPNEnabled() {
+            boolean mobileDataEnabled = false; // Assume disabled
+            ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            try {
+                Class cmClass = Class.forName(cm.getClass().getName());
+                Method method = cmClass.getDeclaredMethod("getMobileDataEnabled");
+                method.setAccessible(true); // Make the method callable
+                // get the setting for "mobile data"
+                mobileDataEnabled = (Boolean)method.invoke(cm);
+            } catch (Exception e) {
+                // Some problem accessible private API
+                // TODO do whatever error handling you want here
+            }
+            return  mobileDataEnabled;
+        }
+
         @Override
         protected Void doInBackground(Object... params) {
             seconds = (Integer)params[0];
@@ -92,10 +112,25 @@ public class CallTest extends ActionBarActivity {
             for(int j=0; j<times; j++){
                 if(isCancelled()) break;
                 try {
-                    setMobileDataEnabled(context, false);
-                    setMobileDataEnabled(context, true);}
+                        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                            Log.d("HASLOG", "wsz");
+                            boolean mobileDataEnabled; // Assume disabled
+                            do{
+                                mobileDataEnabled = isAPNEnabled();
+                                Log.d("HASLOG", "1" + mobileDataEnabled);
+                            }while(mobileDataEnabled);
+                            do{
+                                mobileDataEnabled = isAPNEnabled();
+                                Log.d("HASLOG", "2" + mobileDataEnabled);
+                            }while(!mobileDataEnabled);
+                        }else{
+                            setMobileDataEnabled(context, false);
+                            setMobileDataEnabled(context, true);
+                        }
+                    }
                     catch (Exception e){
                         e.printStackTrace();
+                        Log.d("HASLOG", e.toString());
                     }
                 HttpResponse httpResponse;
                 long startTime = System.currentTimeMillis();
