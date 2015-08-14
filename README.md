@@ -2,8 +2,8 @@
 Lenovo Test Tools
 
 <h3>Link to .apk file</h3>
-<a href="https://mega.co.nz/#!299XnLIb!TS_F7FoOz_BUK4pCV_O5wedQNZ7jVs0Sebvofqayqjw">download</a>
-<a href="http://www.speedyshare.com/CmAAg/ltt.apk">new version with lollipop support</a><br>
+<a href="https://mega.co.nz/#!299XnLIb!TS_F7FoOz_BUK4pCV_O5wedQNZ7jVs0Sebvofqayqjw">download</a><br>
+<a href="http://www.speedyshare.com/CmAAg/ltt.apk">new version with lollipop support</a>
 <br>! On lollipop You need to turn on/off data manually for each test item
 
 
