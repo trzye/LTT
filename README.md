@@ -3,7 +3,7 @@ Lenovo Test Tools
 
 <h3>Link to .apk file</h3>
 <a href="https://onedrive.live.com/redir?resid=4E4659BC89F6BE5C!248&authkey=!AMyk1eomhFOs7WY&ithint=file%2capk">new version with lollipop support</a>
-<br>! On lollipop you need to turn on/off data manually for each test item (it's because android.permission.CHANGE_NETWORK_STATE in new API was blocked for non-system apps)
+<font color="red">On lollipop you need to turn on/off data manually for each test item (it's because android.permission.CHANGE_NETWORK_STATE in new API was blocked for non-system apps)</font>
 
 
 <h2>Description</h2>
